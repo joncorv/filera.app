@@ -1,45 +1,53 @@
-<script setup>
+<script setup lang="ts">
 useHead({
-  meta: [
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' }
-  ],
-  link: [
-    { rel: 'icon', href: '/favicon.ico' }
-  ],
-  htmlAttrs: {
-    lang: 'en'
-  }
+  meta: [{ name: 'viewport', content: 'width=device-width, initial-scale=1' }],
+  link: [{ rel: 'icon', href: '/favicon.ico' }],
+  htmlAttrs: { lang: 'en' }
 })
-
-const title = 'Nuxt Starter Template'
-const description = 'A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours.'
 
 useSeoMeta({
-  title,
-  description,
-  ogTitle: title,
-  ogDescription: description,
-  ogImage: 'https://ui.nuxt.com/assets/templates/nuxt/starter-light.png',
+  title: 'Filera — Batch File Renamer',
+  description: 'A fast, cross-platform batch file renaming tool with a live preview pipeline of tasks and filters.',
   twitterCard: 'summary_large_image'
 })
+
+const route = useRoute()
+const isDocsPage = computed(() => route.path.startsWith('/docs'))
 </script>
 
 <template>
   <UApp>
     <UHeader>
       <template #left>
-        <NuxtLink to="/">
-          <AppLogo class="w-auto h-6 shrink-0" />
+        <NuxtLink to="/" class="font-bold text-base tracking-tight text-(--ui-text-highlighted) flex items-center gap-2 me-4">
+          <UIcon name="i-lucide-file-pen-line" class="text-(--ui-primary) size-5" />
+          Filera
         </NuxtLink>
-
-        <TemplateMenu />
+        <!-- Desktop nav links -->
+        <nav class="hidden lg:flex items-center gap-0.5">
+          <UButton
+            to="/docs/getting-started/introduction"
+            color="neutral"
+            variant="ghost"
+            size="sm"
+            label="Docs"
+            :class="isDocsPage ? 'text-(--ui-text-highlighted) font-medium' : ''"
+          />
+          <UButton
+            to="https://github.com/joncorv/filera/releases"
+            target="_blank"
+            color="neutral"
+            variant="ghost"
+            size="sm"
+            label="Download"
+          />
+        </nav>
       </template>
 
       <template #right>
         <UColorModeButton />
-
         <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
+          to="https://github.com/joncorv/filera"
           target="_blank"
           icon="i-simple-icons-github"
           aria-label="GitHub"
@@ -50,21 +58,20 @@ useSeoMeta({
     </UHeader>
 
     <UMain>
-      <NuxtPage />
+      <NuxtLayout>
+        <NuxtPage />
+      </NuxtLayout>
     </UMain>
 
-    <USeparator icon="i-simple-icons-nuxtdotjs" />
-
-    <UFooter>
+    <UFooter v-if="!isDocsPage">
       <template #left>
-        <p class="text-sm text-muted">
-          Built with Nuxt UI • © {{ new Date().getFullYear() }}
+        <p class="text-sm text-(--ui-text-muted)">
+          Filera — MIT License © {{ new Date().getFullYear() }}
         </p>
       </template>
-
       <template #right>
         <UButton
-          to="https://github.com/nuxt-ui-templates/starter"
+          to="https://github.com/joncorv/filera"
           target="_blank"
           icon="i-simple-icons-github"
           aria-label="GitHub"

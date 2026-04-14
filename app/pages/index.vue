@@ -1,17 +1,16 @@
 <template>
   <div>
     <UPageHero
-      title="Nuxt Starter Template"
-      description="A production-ready starter template powered by Nuxt UI. Build beautiful, accessible, and performant applications in minutes, not hours."
+      title="Batch file renaming, done right."
+      description="Filera is a fast, cross-platform tool for renaming hundreds of files at once. Build a pipeline of tasks and filters, see a live preview, then rename with one click."
       :links="[{
-        label: 'Get started',
-        to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
-        target: '_blank',
+        label: 'Read the docs',
+        to: '/docs/getting-started/introduction',
         trailingIcon: 'i-lucide-arrow-right',
         size: 'xl'
       }, {
-        label: 'Use this template',
-        to: 'https://github.com/nuxt-ui-templates/starter',
+        label: 'Download',
+        to: 'https://github.com/joncorv/filera/releases',
         target: '_blank',
         icon: 'i-simple-icons-github',
         size: 'xl',
@@ -22,49 +21,48 @@
 
     <UPageSection
       id="features"
-      title="Everything you need to build modern Nuxt apps"
-      description="Start with a solid foundation. This template includes all the essentials for building production-ready applications with Nuxt UI's powerful component system."
+      title="Rename smarter, not harder"
+      description="Filera combines a powerful rename engine with a visual pipeline interface. No scripting. No regex required. Just results."
       :features="[{
-        icon: 'i-lucide-rocket',
-        title: 'Production-ready from day one',
-        description: 'Pre-configured with TypeScript, ESLint, Tailwind CSS, and all the best practices. Focus on building features, not setting up tooling.'
+        icon: 'i-lucide-eye',
+        title: 'Live preview',
+        description: 'See every old name and new name side-by-side as you build your pipeline. Nothing changes on disk until you say so.'
       }, {
-        icon: 'i-lucide-palette',
-        title: 'Beautiful by default',
-        description: 'Leveraging Nuxt UI\'s design system with automatic dark mode, consistent spacing, and polished components that look great out of the box.'
+        icon: 'i-lucide-list-ordered',
+        title: 'Task pipeline',
+        description: 'Stack rename tasks in any order — find & replace, number sequences, dates, custom text, case conversion, and more.'
       }, {
-        icon: 'i-lucide-zap',
-        title: 'Lightning fast',
-        description: 'Optimized for performance with SSR/SSG support, automatic code splitting, and edge-ready deployment. Your users will love the speed.'
+        icon: 'i-lucide-filter',
+        title: 'Smart filters',
+        description: 'Target exactly the files you want by name, file type, date range, or size. Filtered files are dimmed in the preview and skipped at rename time.'
       }, {
-        icon: 'i-lucide-blocks',
-        title: '100+ components included',
-        description: 'Access Nuxt UI\'s comprehensive component library. From forms to navigation, everything is accessible, responsive, and customizable.'
+        icon: 'i-lucide-folder-open',
+        title: 'Recursive folder support',
+        description: 'Open entire directory trees at once. Filera walks subfolders automatically so you can rename an entire library in one pass.'
       }, {
-        icon: 'i-lucide-code-2',
-        title: 'Developer experience first',
-        description: 'Auto-imports, hot module replacement, and TypeScript support. Write less boilerplate and ship more features.'
+        icon: 'i-lucide-copy',
+        title: 'Flexible output',
+        description: 'Rename files in place, copy renamed files to a new directory, or move them — whatever fits your workflow.'
       }, {
-        icon: 'i-lucide-shield-check',
-        title: 'Built for scale',
-        description: 'Enterprise-ready architecture with proper error handling, SEO optimization, and security best practices built-in.'
+        icon: 'i-lucide-monitor',
+        title: 'Truly cross-platform',
+        description: 'Built with Tauri and Rust. Native performance on Windows, macOS, and Linux with a single consistent interface.'
       }]"
     />
 
     <UPageSection>
       <UPageCTA
-        title="Ready to build your next Nuxt app?"
-        description="Join thousands of developers building with Nuxt and Nuxt UI. Get this template and start shipping today."
+        title="Ready to tame your file chaos?"
+        description="Download Filera for free or read the documentation to learn what it can do."
         variant="subtle"
         :links="[{
-          label: 'Start building',
-          to: 'https://ui.nuxt.com/docs/getting-started/installation/nuxt',
-          target: '_blank',
+          label: 'Read the docs',
+          to: '/docs/getting-started/introduction',
           trailingIcon: 'i-lucide-arrow-right',
           color: 'neutral'
         }, {
-          label: 'View on GitHub',
-          to: 'https://github.com/nuxt-ui-templates/starter',
+          label: 'Download on GitHub',
+          to: 'https://github.com/joncorv/filera/releases',
           target: '_blank',
           icon: 'i-simple-icons-github',
           color: 'neutral',
