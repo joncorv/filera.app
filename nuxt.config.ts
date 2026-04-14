@@ -2,7 +2,8 @@
 export default defineNuxtConfig({
   modules: [
     '@nuxt/eslint',
-    '@nuxt/ui'
+    '@nuxt/ui',
+    '@nuxt/content'
   ],
 
   devtools: {
@@ -15,7 +16,20 @@ export default defineNuxtConfig({
     '/': { prerender: true }
   },
 
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/']
+    }
+  },
+
   compatibilityDate: '2025-01-15',
+
+  vite: {
+    optimizeDeps: {
+      include: []
+    }
+  },
 
   eslint: {
     config: {
