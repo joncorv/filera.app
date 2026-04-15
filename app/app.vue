@@ -13,6 +13,16 @@ useSeoMeta({
 
 const route = useRoute()
 const isDocsPage = computed(() => route.path.startsWith('/docs'))
+
+const { latestTag } = useRuntimeConfig().public
+const version = (latestTag as string).replace('filera-v', '')
+const releaseBase = `https://github.com/joncorv/filera/releases/download/${latestTag}`
+const downloadItems = [[
+  { label: 'macOS', icon: 'i-simple-icons-apple', to: `${releaseBase}/filera_${version}_universal.dmg`, target: '_blank' },
+  { label: 'Windows', icon: 'i-simple-icons-windows', to: `${releaseBase}/filera_${version}_x64-setup.exe`, target: '_blank' },
+  { label: 'Linux .deb', icon: 'i-simple-icons-debian', to: `${releaseBase}/filera_${version}_amd64.deb`, target: '_blank' },
+  { label: 'Linux .rpm', icon: 'i-simple-icons-fedora', to: `${releaseBase}/filera-${version}-1.x86_64.rpm`, target: '_blank' },
+]]
 </script>
 
 <template>
@@ -23,26 +33,27 @@ const isDocsPage = computed(() => route.path.startsWith('/docs'))
           <UIcon name="i-lucide-file-pen-line" class="text-(--ui-primary) size-5" />
           Filera
         </NuxtLink>
-        <!-- Desktop nav links -->
-        <nav class="hidden lg:flex items-center gap-0.5">
-          <UButton
-            to="/docs/getting-started/introduction"
-            color="neutral"
-            variant="ghost"
-            size="sm"
-            label="Docs"
-            :class="isDocsPage ? 'text-(--ui-text-highlighted) font-medium' : ''"
-          />
-          <UButton
-            to="https://github.com/joncorv/filera/releases"
-            target="_blank"
-            color="neutral"
-            variant="ghost"
-            size="sm"
-            label="Download"
-          />
-        </nav>
       </template>
+
+      <UButton
+        to="/docs/getting-started/introduction"
+        color="neutral"
+        variant="ghost"
+        size="md"
+        icon="i-lucide-book-open"
+        label="Documentation"
+        :class="isDocsPage ? 'text-(--ui-primary)' : ''"
+      />
+      <UDropdownMenu :items="downloadItems">
+        <UButton
+          color="neutral"
+          variant="ghost"
+          size="md"
+          icon="i-lucide-download"
+          trailing-icon="i-lucide-chevron-down"
+          label="Download"
+        />
+      </UDropdownMenu>
 
       <template #right>
         <UColorModeButton />
