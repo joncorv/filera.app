@@ -1,5 +1,16 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
+const releaseRes = await fetch('https://api.github.com/repos/joncorv/filera/releases/latest', {
+  headers: { Accept: 'application/vnd.github+json' }
+}).catch(() => null)
+
+const latestTag: string = releaseRes?.ok
+  ? await releaseRes.json().then((d: { tag_name: string }) => d.tag_name)
+  : 'filera-v0.4.25'
+
 export default defineNuxtConfig({
+  runtimeConfig: {
+    public: { latestTag }
+  },
   modules: [
     '@nuxt/eslint',
     '@nuxt/ui',
