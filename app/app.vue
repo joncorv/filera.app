@@ -21,16 +21,22 @@ const downloadItems = [[
   { label: 'macOS', icon: 'i-simple-icons-apple', to: `${releaseBase}/filera_${version}_universal.dmg`, target: '_blank' },
   { label: 'Windows', icon: 'i-simple-icons-windows', to: `${releaseBase}/filera_${version}_x64-setup.exe`, target: '_blank' },
   { label: 'Linux .deb', icon: 'i-simple-icons-debian', to: `${releaseBase}/filera_${version}_amd64.deb`, target: '_blank' },
-  { label: 'Linux .rpm', icon: 'i-simple-icons-fedora', to: `${releaseBase}/filera-${version}-1.x86_64.rpm`, target: '_blank' },
+  { label: 'Linux .rpm', icon: 'i-simple-icons-fedora', to: `${releaseBase}/filera-${version}-1.x86_64.rpm`, target: '_blank' }
 ]]
 </script>
 
 <template>
   <UApp>
-    <UHeader>
+    <UHeader :toggle="false">
       <template #left>
-        <NuxtLink to="/" class="font-bold text-base tracking-tight text-(--ui-text-highlighted) flex items-center gap-2 me-4">
-          <UIcon name="i-lucide-file-pen-line" class="text-(--ui-primary) size-5" />
+        <NuxtLink
+          to="/"
+          class="font-bold text-base tracking-tight text-(--ui-text-highlighted) flex items-center gap-2 me-4"
+        >
+          <UIcon
+            name="i-lucide-file-pen-line"
+            class="text-(--ui-primary) size-5"
+          />
           Filera
         </NuxtLink>
       </template>
@@ -74,7 +80,7 @@ const downloadItems = [[
       </NuxtLayout>
     </UMain>
 
-    <UFooter v-if="!isDocsPage">
+    <UFooter>
       <template #left>
         <p class="text-sm text-(--ui-text-muted)">
           Filera — MIT License © {{ new Date().getFullYear() }}
