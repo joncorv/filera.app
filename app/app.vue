@@ -31,11 +31,14 @@ const downloadItems = [[
       <template #left>
         <NuxtLink
           to="/"
-          class="font-bold text-base tracking-tight text-(--ui-text-highlighted) flex items-center gap-2 me-4"
+          class="font-bold text-[1.625rem] tracking-wide text-(--ui-text-highlighted) flex items-center gap-2 me-4"
         >
-          <UIcon
-            name="i-lucide-file-pen-line"
-            class="text-(--ui-primary) size-5"
+          <img
+            src="/icon.png"
+            alt="Filera logo"
+            width="28"
+            height="28"
+            class="rounded-md"
           />
           Filera
         </NuxtLink>
