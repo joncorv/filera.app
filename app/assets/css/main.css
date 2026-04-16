@@ -4,6 +4,18 @@
 @theme static {
   --font-sans: 'Public Sans', sans-serif;
 
+  --color-chartreuse-50: #f2fee8;
+  --color-chartreuse-100: #e1fcc8;
+  --color-chartreuse-200: #c3f99a;
+  --color-chartreuse-300: #96f260;
+  --color-chartreuse-400: #67dd2e;
+  --color-chartreuse-500: #40b51b;
+  --color-chartreuse-600: #319114;
+  --color-chartreuse-700: #267312;
+  --color-chartreuse-800: #215b13;
+  --color-chartreuse-900: #1e4d13;
+  --color-chartreuse-950: #0b2a05;
+
   --color-green-50: #EFFDF5;
   --color-green-100: #D9FBE8;
   --color-green-200: #B3F5D1;
