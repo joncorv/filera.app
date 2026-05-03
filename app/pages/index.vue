@@ -4,15 +4,14 @@
       title="Batch file renaming, done right."
       description="Filera is a fast, cross-platform tool for renaming hundreds of files at once. Build a pipeline of tasks and filters, see a live preview, then rename with one click."
       :links="[{
-        label: 'Read the docs',
-        to: '/docs/getting-started/introduction',
+        label: 'Get Started',
+        to: '/docs/getting-started/installation',
         trailingIcon: 'i-lucide-arrow-right',
         size: 'xl'
       }, {
-        label: 'Download',
-        to: 'https://github.com/joncorv/filera/releases',
-        target: '_blank',
-        icon: 'i-simple-icons-github',
+        label: 'Read the docs',
+        to: '/docs/getting-started/introduction',
+        trailingIcon: 'i-lucide-book-open',
         size: 'xl',
         color: 'neutral',
         variant: 'subtle'
@@ -56,17 +55,15 @@
         description="Download Filera for free or read the documentation to learn what it can do."
         variant="subtle"
         :links="[{
+          label: 'Get Started',
+          to: '/docs/getting-started/installation',
+          trailingIcon: 'i-lucide-arrow-right'
+        }, {
           label: 'Read the docs',
           to: '/docs/getting-started/introduction',
-          trailingIcon: 'i-lucide-arrow-right',
-          color: 'neutral'
-        }, {
-          label: 'Download on GitHub',
-          to: 'https://github.com/joncorv/filera/releases',
-          target: '_blank',
-          icon: 'i-simple-icons-github',
+          trailingIcon: 'i-lucide-book-open',
           color: 'neutral',
-          variant: 'outline'
+          variant: 'subtle'
         }]"
       />
     </UPageSection>
